@@ -1,0 +1,15 @@
+    1  psql
+    2  exit
+    3  psql
+    4  createuser --interactive
+    5  psql
+    6  psql -d dbDistribuidos
+    7  psql -d dbDistribuidos
+    8  psql 
+    9  psql -d dbdistribuidos
+   10  man pg_dump
+   11  pg_dump dbdistribuidos > initDb.sql
+   12  ls
+   13  whoami
+   14  history
+   15  history > instructions.txt
