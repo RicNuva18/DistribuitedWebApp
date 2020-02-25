@@ -9,7 +9,7 @@ Dentro del procedimiento que se hace para realizar este escenario, se tiene lo s
  ## Configuración del archivo VagrantFile
  
  
- [Imagen1]: https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleWebServer.png
+ <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleWebServer.png">
  
  ## Configuración del archivo hosts
  
