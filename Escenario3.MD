@@ -62,16 +62,22 @@ Al ejecutar Vagrant, se lanza un error debido a que se intenta crear las maquina
  
 ## Prueba del sistema configurado y aprovisionado 
  
-  <br>
-  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+ Al conectarse al servidor Web se muestra una lista de valores ya predefinidos en la base de datos y un formulario para agregar otro nuevo usuario a la base de datos. En cuanto al usuario a agregarse se digitan los valores "Usuario" como Id y "950" como nombre.
+ 
+<br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/PruebaFinalWeb.png">
  <br>
  
-  <br>
-  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
- <br>
+Luego de haberse ejecutado el botón de Submit, aparece el siguiente mensaje que dice que se ha agregado exitosamente el usuario a la base de datos.
  
   <br>
-  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/PruebaFinalAgregar.png">
+ <br>
+ 
+ Al retornar otra vez a la página principal del servidor Web, se observa que se visualiza el usuario que se ha agregado recientemente.
+ 
+  <br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/PruebaFinalAgregado.png">
  <br>
  
 
