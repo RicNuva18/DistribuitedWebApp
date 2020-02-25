@@ -1,5 +1,13 @@
 # ESCENARIO 3
 
+## Nombres de los integrantes
+
+- Ricardo Nuñez Valencia-A00030132
+- Alejandro Ramos Vélez-A00310480
+- Felipe Jurado Murillo-A00328420
+
+## Desarrollo del Escenario
+
 Dentro del procedimiento que se hace para realizar este escenario, se tiene lo siguiente:
 
 - Configuración del archivo VagrantFile
@@ -7,7 +15,7 @@ Dentro del procedimiento que se hace para realizar este escenario, se tiene lo s
 - Configuración del archivo servers.yml
 - Prueba del sistema configurado y aprovisionado
   
- ## Configuración del archivo VagrantFile
+ ### Configuración del archivo VagrantFile
  
  
  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/VagrantConfiguracion1.png">
@@ -21,14 +29,14 @@ Al ejecutar Vagrant, se lanza un error debido a que se intenta crear las maquina
  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/VagrantConfiguracion2.png">
  <br>
 
- ## Configuración del archivo hosts
+ ### Configuración del archivo hosts
  
  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/Hosts2.png">
  <br>
  
  En la configuración del hosts se tiene que agregar el comando "ServerX ansible_host=DirecciónIP" para que ejecute el aprovisionamiento en orden de cada máquina virtual. Esto logra solucionar completamente el error descrito en la anterior sección. 
  
- ## Configuración del archivo servers.yml
+ ### Configuración del archivo servers.yml
  
  
  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleWebServer.png">
@@ -60,7 +68,7 @@ Al ejecutar Vagrant, se lanza un error debido a que se intenta crear las maquina
  - Dar permisos de ejecución al script de configuración de la base de datos
  - Ejecutar el script de configuración de la base de datos
  
-## Prueba del sistema configurado y aprovisionado 
+### Prueba del sistema configurado y aprovisionado 
  
  Al conectarse al servidor Web se muestra una lista de valores ya predefinidos en la base de datos y un formulario para agregar otro nuevo usuario a la base de datos. En cuanto al usuario a agregarse se digitan los valores "Usuario" como Id y "950" como nombre.
  
@@ -80,5 +88,21 @@ Luego de haberse ejecutado el botón de Submit, aparece el siguiente mensaje que
   <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/PruebaFinalAgregado.png">
  <br>
  
-
+## Dificultades encontradas
  
+Dentro de las dificultades encontradas a lo largo del desarrollo del sistema están:
+
+- Comunicación nula del Backend con la base de datos. Para solucionar esta dificultad se busca la dependencia "phpx.x-mysql", ya que esta permite que PHP puede usar el API de mysqli.
+
+- Ejecución errónea del archivo VagrantFile y hosts debida a la realización del aprovisionamiento simultáneamente con la creación de las máquinas. Para solucionar esta dificultad fue necesario eliminar la línea de "ansible.limit=all" del archivo VagrantFile y adicionar la línea "ServerX ansible_host=dirIP" en cada host del archivo hosts.
+
+- Errores en el archivo servers.yml con respecto a:
+.- Copiar archivos de un repositorio remoto a una carpeta inexistente. Para solucionarlo se crea la carpeta antes de copiar los archivos.
+.- Instalación incompleta de dependencias para el funcionamiento de los servidores. Para solucionarlo se utiliza el gestor de paquetes APT para que instale las dependencias necesarias
+.- Permisos para acceder a la base de datos. Para solucionarlo se requiere modificar el archivo de configuración de mysql para que la base de datos pueda escuchar cualquier dirección IP cliente. Adicionalmente se tiene que dar permiso al usuario en el motor MySQL.
+
+## Conclusiones
+
+- Vagrant es una herramienta que permite automatizar el proceso de creación de máquinas virtuales. Esto logra que se evite hacer tareas repetitivas y manuales, como el asignamiento de partición de disco, seleccionar la cantidad de RAM, instalar la ISO, etc.
+
+- Ansible es una herramienta de aprovisionamiento que se basa en el orden de las tareas asignadas a cada host de la red. Esto logra que se automatiza la creación de servicios en una infraestructura ya existente.
