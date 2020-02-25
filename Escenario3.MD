@@ -97,9 +97,9 @@ Dentro de las dificultades encontradas a lo largo del desarrollo del sistema est
 - Ejecución errónea del archivo VagrantFile y hosts debida a la realización del aprovisionamiento simultáneamente con la creación de las máquinas. Para solucionar esta dificultad fue necesario eliminar la línea de "ansible.limit=all" del archivo VagrantFile y adicionar la línea "ServerX ansible_host=dirIP" en cada host del archivo hosts.
 
 - Errores en el archivo servers.yml con respecto a:
-.- Copiar archivos de un repositorio remoto a una carpeta inexistente. Para solucionarlo se crea la carpeta antes de copiar los archivos.
-.- Instalación incompleta de dependencias para el funcionamiento de los servidores. Para solucionarlo se utiliza el gestor de paquetes APT para que instale las dependencias necesarias
-.- Permisos para acceder a la base de datos. Para solucionarlo se requiere modificar el archivo de configuración de mysql para que la base de datos pueda escuchar cualquier dirección IP cliente. Adicionalmente se tiene que dar permiso al usuario en el motor MySQL.
+-- Copiar archivos de un repositorio remoto a una carpeta inexistente. Para solucionarlo se crea la carpeta antes de copiar los archivos.
+-- Instalación incompleta de dependencias para el funcionamiento de los servidores. Para solucionarlo se utiliza el gestor de paquetes APT para que instale las dependencias necesarias
+-- Permisos para acceder a la base de datos. Para solucionarlo se requiere modificar el archivo de configuración de mysql para que la base de datos pueda escuchar cualquier dirección IP cliente. Adicionalmente se tiene que dar permiso al usuario en el motor MySQL.
 
 ## Conclusiones
 
