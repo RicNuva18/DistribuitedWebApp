@@ -5,6 +5,7 @@ Dentro del procedimiento que se hace para realizar este escenario, se tiene lo s
 - Configuración del archivo VagrantFile
 - Configuración del archivo hosts
 - Configuración del archivo servers.yml
+- Prueba del sistema configurado y aprovisionado
   
  ## Configuración del archivo VagrantFile
  
@@ -30,5 +31,48 @@ Al ejecutar Vagrant, se lanza un error debido a que se intenta crear las maquina
  ## Configuración del archivo servers.yml
  
  
+ <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleWebServer.png">
+ <br>
  
+ En cuanto a la configuración para el aprovisionamiento del servidor Web, se tienen las siguientes tareas:
+ 
+ - Actualizar las dependencias de la máquina con el comando apt update.
+ - Instalar el módulo de apache2.
+ - Borrar cualquier archivo que haya en la carpeta /var/www/html. Esto con el fin de evitar errores en tiempo de ejecución de Vagrant al copiar archivos ya existentes.
+ - Instalar las dependencias que se necesitan de PHP para funcionar en el servidor Web y poderse comunicar con el servidor de base de datos.
+ - Permitir la dependencia que PHP utiliza para interactuar con bases de datos MySQL.
+ - Instalar GIT.
+ - Clonar un repositorio remoto que contiene los archivos para ser usados por el servidor Web.
+ - Restaurar el servidor apache2.
+ 
+ 
+ <br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+ <br>
+ 
+ Luego se ejecuta la configuración del servidor de base de datos, para la cual se tienen las siguientes tareas:
+ 
+ - Instalar dependencias de Python y de Mysql para la base de datos.
+ - Instalar la dependencia MySQL Server.
+ - Crear un directorio para guardar archivos que va a necesitar el servidor.
+ - Cambiarse al directorio creado.
+ - Clonar un repositorio remoto que contiene los archivos para ser usados por el servidor de base de datos.
+ - Dar permisos de ejecución al script de configuración de la base de datos
+ - Ejecutar el script de configuración de la base de datos
+ 
+## Prueba del sistema configurado y aprovisionado 
+ 
+  <br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+ <br>
+ 
+  <br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+ <br>
+ 
+  <br>
+  <img src="https://github.com/RicNuva18/DistribuitedWebApp/blob/master/AnsibleDatabaseServer.png">
+ <br>
+ 
+
  
